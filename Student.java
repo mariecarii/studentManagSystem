@@ -29,8 +29,6 @@ public class Student {
 
         this.courses = enroll();
 
-
-        System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentID + " " + courses + balance);
     }
 
     // generate a 5 digit ID
@@ -103,4 +101,7 @@ public class Student {
         viewBalance();
     }
     // shows status/info
+    public void showInfo() {
+        System.out.println("NAME: " + firstName + " " + lastName + "\nID: "+ studentID + "\nCOURSES ENROLLED: " + courses + "\nBALANCE: " + balance);
+    }
 }
