@@ -30,8 +30,7 @@ public class Student {
         this.courses = enroll();
 
 
-        System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentID + " " + courses);
-        viewBalance();
+        System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentID + " " + courses + balance);
     }
 
     // generate a 5 digit ID
@@ -91,10 +90,14 @@ public class Student {
 
     // view balance
     public void viewBalance() {
-        System.out.println("Your balance is:" + balance);
+        System.out.println("Your balance is: $" + balance);
     }
 
     //  pay tuition
-
+    public void payTuition(int payment) {
+        balance -= payment;
+        System.out.println("Thank you for your payment of: $" + payment);
+        viewBalance();
+    }
     // shows status/info
 }
