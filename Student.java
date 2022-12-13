@@ -7,9 +7,9 @@ public class Student {
     private String lastName;
     private String gradeYear;
     private String studentID;
-    private String courses;
+    private String courses = "";
     // static because it is no specific to instance, but all
-    private  static int balance;
+    private static int balance = 0;
     private int costPerCourse = 600;
 
     // constructor to enter name and year
@@ -27,8 +27,10 @@ public class Student {
 
         this.studentID = setStudentID();
 
-        System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentID);
+        this.courses = enroll();
 
+
+        System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentID + " " + courses);
     }
 
     // generate a 5 digit ID
@@ -39,8 +41,8 @@ public class Student {
 
         //fill in rest of id (up tp length of 5) with random numbers
         String numberSet = "1234567890";
-        char[] id = new char[5-length];
-        for (int i=0; i<5-length; i++) {
+        char[] id = new char[5 - length];
+        for (int i = 0; i < 5 - length; i++) {
             int random = (int) (Math.random() * numberSet.length());
             id[i] = numberSet.charAt(random);
         }
@@ -49,14 +51,44 @@ public class Student {
         return newID;
 
     }
-    }
-
-
 
 
     // enroll in courses
+    public String enroll() {
+        System.out.println("Enter course to enroll (ONE AT A TIME):\n 1. Machine Learning\n 2. AP Java\n 3. IT\n 4. AWS\n 5. EXIT/DONE ");
+        Scanner scan = new Scanner(System.in);
+        int userInputCourse = scan.nextInt();
+
+        if (userInputCourse == 1 || userInputCourse == 2 || userInputCourse == 3 || userInputCourse == 4) {
+            //add 600 per course
+            balance += 600;
+            if (userInputCourse == 1) {
+                courses += "Machine Learning ";
+                enroll();
+            }
+            else if (userInputCourse == 2) {
+                courses += "AP Java ";
+                enroll();
+            }
+            else if (userInputCourse == 3) {
+                courses += "IT ";
+                enroll();
+            }
+            else if (userInputCourse == 4) {
+                courses += "AWS ";
+                enroll();
+            }
+        else if (userInputCourse == 5) {
+            return courses;
+            }
+        else {
+                System.out.println("Invalid");
+            }
+        }
+        return courses;
+    }
 
     // view balance and pay tuition
 
     // shows status/info
-
+}
