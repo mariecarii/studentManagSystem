@@ -31,7 +31,7 @@ public class Student {
 
 
         System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentID + " " + courses);
-        System.out.println(balance);
+        viewBalance();
     }
 
     // generate a 5 digit ID
@@ -89,7 +89,12 @@ public class Student {
         return courses;
     }
 
-    // view balance and pay tuition
+    // view balance
+    public void viewBalance() {
+        System.out.println("Your balance is:" + balance);
+    }
+
+    //  pay tuition
 
     // shows status/info
 }
