@@ -100,7 +100,7 @@ public class Student {
         System.out.println("Thank you for your payment of: $" + payment);
         viewBalance();
     }
-    // shows status/info
+    // shows status/information
     public void showInfo() {
         System.out.println("NAME: " + firstName + " " + lastName + "\nID: "+ studentID + "\nCOURSES ENROLLED: " + courses + "\nBALANCE: " + balance);
     }
