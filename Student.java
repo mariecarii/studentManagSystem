@@ -6,7 +6,7 @@ public class Student {
     private String firstName;
     private String lastName;
     private String gradeYear;
-    private int studentID;
+    private String studentID;
     private String courses;
     // static because it is no specific to instance, but all
     private  static int balance;
@@ -24,11 +24,13 @@ public class Student {
 
         System.out.println("Enter year: ");
         this.gradeYear = scan.nextLine();
-        System.out.println(firstName + lastName + gradeYear);
 
-        System.out.println(setStudentID());
+        this.studentID = setStudentID();
+
+        System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentID);
 
     }
+
     // generate a 5 digit ID
     private String setStudentID() {
         // start id with grade year entered
