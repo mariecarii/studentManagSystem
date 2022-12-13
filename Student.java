@@ -9,7 +9,7 @@ public class Student {
     private String studentID;
     private String courses = "";
     // static because it is no specific to instance, but all
-    private static int balance = 0;
+    private int balance = 0;
     private int costPerCourse = 600;
 
     // constructor to enter name and year
@@ -31,6 +31,7 @@ public class Student {
 
 
         System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentID + " " + courses);
+        System.out.println(balance);
     }
 
     // generate a 5 digit ID
@@ -60,8 +61,8 @@ public class Student {
         int userInputCourse = scan.nextInt();
 
         if (userInputCourse == 1 || userInputCourse == 2 || userInputCourse == 3 || userInputCourse == 4) {
-            //add 600 per course
-            balance += 600;
+            // increment tuition balance by 600 each time a class is added
+            balance += costPerCourse;
             if (userInputCourse == 1) {
                 courses += "Machine Learning ";
                 enroll();
