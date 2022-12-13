@@ -1,12 +1,15 @@
+import java.util.ArrayList;
 import java.util.Scanner;
+
 
 public class Student {
     private String firstName;
     private String lastName;
-    private int gradeYear;
+    private String gradeYear;
     private int studentID;
     private String courses;
-    private int balance;
+    // static because it is no specific to instance, but all
+    private  static int balance;
     private int costPerCourse = 600;
 
     // constructor to enter name and year
@@ -20,18 +23,38 @@ public class Student {
         this.lastName = scan.nextLine();
 
         System.out.println("Enter year: ");
-        this.gradeYear = scan.nextInt();
+        this.gradeYear = scan.nextLine();
         System.out.println(firstName + lastName + gradeYear);
 
-
-
+        System.out.println(setStudentID());
 
     }
     // generate a 5 digit ID
+    private String setStudentID() {
+        // start id with grade year entered
+        String newID = gradeYear;
+        int length = gradeYear.length();
+
+        //fill in rest of id (up tp length of 5) with random numbers
+        String numberSet = "1234567890";
+        char[] id = new char[5-length];
+        for (int i=0; i<5-length; i++) {
+            int random = (int) (Math.random() * numberSet.length());
+            id[i] = numberSet.charAt(random);
+        }
+
+        newID += String.valueOf(id);
+        return newID;
+
+    }
+    }
+
+
+
 
     // enroll in courses
 
     // view balance and pay tuition
 
     // shows status/info
-}
+
