@@ -1,6 +1,9 @@
 # studentManagementSystem
 
-<img alt="Console Screenshot" height="10" src="/Users/marieyearup/studentManagementSystem/studentManagSystem/Project2_running.png" width="10"/>
+
+<p>
+<img src="Project2_running.png" alt="console screenshot"/>
+</p>
 
 ## Project Description
 This project's goal was to create an application that helps schools enroll new students. It takes in the student's first name, last name, and year. It returns a 5 digit ID which starts with the student's year. It also allows the enrollment of certain courses and adds cost of each course to the tuition. You can also check and pay tuition.
